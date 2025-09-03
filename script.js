@@ -349,7 +349,7 @@ async function fetchGitHubProjects() {
                     'exco-budget-management-system',
                     'sentiment-analysis-app',
                     'weather-dashboard',
-                    'hand-gesture-and-voice-controlled-computer-system'
+                    'HV-System-v2'
                 ]; 
                 
                 const repoName = repo.name.toLowerCase();
@@ -402,7 +402,7 @@ function generateAttractiveDescription(repoName, repoDescription) {
         'exco_budget_management_system': 'A sophisticated budget management system for EXCO members of the Kedah State Government. Features include budget allocation, expense tracking, approval workflows, financial reporting, and role-based access control for government officials.',
         'sentiment_analysis_app': 'An intelligent sentiment analysis application that analyzes text to determine emotional tone and sentiment. Features include real-time text processing, sentiment scoring, emotion classification, and detailed analytics dashboard. Built with modern AI/ML technologies for accurate sentiment detection.',
         'weather_dashboard': 'A dynamic weather dashboard application that provides real-time weather information, forecasts, and interactive weather maps. Features include current conditions, hourly/daily forecasts, weather alerts, and customizable location tracking with beautiful visualizations.',
-        'hand_gesture_and_voice_controlled_computer_system': 'An innovative computer control system that combines hand gesture recognition and voice commands for hands-free computer operation. Features include real-time gesture detection, voice command processing, customizable shortcuts, and accessibility features for enhanced user experience.'
+        'hv_system_v2': 'An innovative computer control system that combines hand gesture recognition and voice commands for hands-free computer operation. Features include real-time gesture detection, voice command processing, customizable shortcuts, and accessibility features for enhanced user experience.'
     };
     
     const repoKey = repoName.toLowerCase().replace(/[^a-z0-9]/g, '_');
@@ -424,7 +424,7 @@ function getProjectStatus(repoName) {
         'enterprise': 'LIVE',
         'sentiment_analysis_app': 'AI/ML',
         'weather_dashboard': 'LIVE',
-        'hand_gesture_and_voice_controlled_computer_system': 'AI/ML'
+        'hv_system_v2': 'FYP'
     };
     
     const repoKey = repoName.toLowerCase().replace(/[^a-z0-9]/g, '_');
@@ -555,7 +555,7 @@ function getProjectImage(repoName) {
         'enterprise': 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
         'sentiment_analysis_app': 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800',
         'weather_dashboard': 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-        'hand_gesture_and_voice_controlled_computer_system': 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800'
+        'hv_system_v2': 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800'
     };
     
     const repoKey = repoName.toLowerCase().replace(/[^a-z0-9]/g, '_');
