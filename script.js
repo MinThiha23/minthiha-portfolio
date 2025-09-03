@@ -356,16 +356,15 @@ async function fetchGitHubProjects() {
                 'nextjs-ai-chatbot'
             ];
             
-            // Include specific repositories we want to show
-            const includedRepos = [
-                'kda-campusconnect',
-                'recording_system',
-                'vehicle-management-system',
-                'exco-budget-management-system',
-                'sentiment-analysis-app',
-                'weather-dashboard',
-                'HV-System-v2'
-            ]; 
+                            // Include specific repositories we want to show
+                const includedRepos = [
+                    'kda-campusconnect',
+                    'vehicle-management-system',
+                    'exco-budget-management-system',
+                    'sentiment-analysis-app',
+                    'weather-dashboard',
+                    'HV-System-v2'
+                ]; 
             
             const repoName = repo.name.toLowerCase();
             
