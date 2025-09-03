@@ -445,11 +445,11 @@ function createProjectCard(repo) {
                             <a href="${repo.html_url}" class="project-link" target="_blank" rel="noopener">
                                 <span>CODE</span>
                             </a>
-                            ${getDemoLink(repo.name) ? `<a href="${getDemoLink(repo.name)}" class="project-link" target="_blank" rel="noopener">
+                            ${getDemoLink(repo.name) ? `<a href="${getDemoLink(repo.name)}" class="project-link demo-link" target="_blank" rel="noopener">
                                 <span>DEMO</span>
-                            </a>` : (repo.homepage ? `<a href="${repo.homepage}" class="project-link" target="_blank" rel="noopener">
+                            </a>` : (repo.homepage ? `<a href="${repo.homepage}" class="project-link demo-link" target="_blank" rel="noopener">
                                 <span>DEMO</span>
-                            </a>` : `<a href="${repo.html_url}" class="project-link" target="_blank" rel="noopener">
+                            </a>` : `<a href="${repo.html_url}" class="project-link demo-link" target="_blank" rel="noopener">
                                 <span>DEMO</span>
                             </a>`)}
                         </div>
@@ -537,6 +537,7 @@ function getDemoLink(repoName) {
     };
     
     const repoKey = repoName.toLowerCase().replace(/[^a-z0-9]/g, '_');
+    console.log('getDemoLink called for:', repoName, 'repoKey:', repoKey, 'result:', demoLinks[repoKey]);
     return demoLinks[repoKey] || null;
 }
 
