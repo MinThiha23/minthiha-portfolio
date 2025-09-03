@@ -371,7 +371,10 @@ async function fetchGitHubProjects() {
             
             // If we have specific repositories to include, only show those
             if (includedRepos.length > 0) {
-                const isIncluded = includedRepos.some(included => repoName.includes(included));
+                const isIncluded = includedRepos.some(included => 
+                    repoName.includes(included.toLowerCase()) || 
+                    repo.name.toLowerCase().includes(included.toLowerCase())
+                );
                 console.log(`Repo ${repo.name}: checking if includes any of ${includedRepos.join(', ')} - Result: ${isIncluded}`);
                 return isIncluded;
             }
