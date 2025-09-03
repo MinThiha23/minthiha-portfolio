@@ -350,7 +350,7 @@ async function fetchGitHubProjects() {
                     'sentiment-analysis-app',
                     'weather-dashboard',
                     'hand-gesture-and-voice-controlled-computer-system'
-                ];
+                ]; 
                 
                 const repoName = repo.name.toLowerCase();
                 
@@ -531,7 +531,9 @@ function getDemoLink(repoName) {
         'kda-campusconnect': 'https://kda-campusconnect.vercel.app/',
         'recording_system': null, // Add when you have a demo
         'vehicle_management_system': null, // Add when you have a demo
-        'sentiment_analysis_app': 'https://sentiment-analysis-app-vh6x.onrender.com/'
+        'sentiment_analysis_app': 'https://sentiment-analysis-app-vh6x.onrender.com/',
+        'weather_dashboard': 'https://project-r1aadj807-minthiha23s-projects.vercel.app',
+        'weather-dashboard': 'https://project-r1aadj807-minthiha23s-projects.vercel.app'
     };
     
     const repoKey = repoName.toLowerCase().replace(/[^a-z0-9]/g, '_');
