@@ -323,47 +323,57 @@ async function fetchGitHubProjects() {
         const repos = await response.json();
         
         if (response.ok) {
-            return repos.filter(repo => {
-                // Exclude forks and private repos
-                if (PORTFOLIO_CONFIG.github.excludeForks && repo.fork) return false;
-                if (PORTFOLIO_CONFIG.github.excludePrivate && repo.private) return false;
-                
-                // Exclude test repositories and config files
-                const excludedRepos = [
-                    'test_student_management_system',
-                    'minthiha23',
-                    'test',
-                    'demo',
-                    'config',
-                    'profile',
-                    'readme',
-                    'codealpha_tasks',
-                    'nextjs-ai-chatbot'
-                ];
-                
-                // Include specific repositories we want to show
-                const includedRepos = [
-                    'kda-campusconnect',
-                    'recording_system',
-                    'vehicle-management-system',
-                    'exco-budget-management-system',
-                    'sentiment-analysis-app',
-                    'weather-dashboard',
-                    'HV-System-v2'
-                ]; 
-                
-                const repoName = repo.name.toLowerCase();
-                
-                // If we have specific repositories to include, only show those
-                if (includedRepos.length > 0) {
-                    return includedRepos.some(included => repoName.includes(included));
-                }
-                
-                // Otherwise, exclude test repositories
-                if (excludedRepos.some(excluded => repoName.includes(excluded))) return false;
-                
-                return true;
-            });
+                    return repos.filter(repo => {
+            console.log(`Processing repo: ${repo.name} (private: ${repo.private}, fork: ${repo.fork})`);
+            
+            // Exclude forks and private repos
+            if (PORTFOLIO_CONFIG.github.excludeForks && repo.fork) {
+                console.log(`Skipping ${repo.name} - forked repository`);
+                return false;
+            }
+            if (PORTFOLIO_CONFIG.github.excludePrivate && repo.private) {
+                console.log(`Skipping ${repo.name} - private repository`);
+                return false;
+            }
+            
+            // Exclude test repositories and config files
+            const excludedRepos = [
+                'test_student_management_system',
+                'minthiha23',
+                'test',
+                'demo',
+                'config',
+                'profile',
+                'readme',
+                'codealpha_tasks',
+                'nextjs-ai-chatbot'
+            ];
+            
+            // Include specific repositories we want to show
+            const includedRepos = [
+                'kda-campusconnect',
+                'recording_system',
+                'vehicle-management-system',
+                'exco-budget-management-system',
+                'sentiment-analysis-app',
+                'weather-dashboard',
+                'HV-System-v2'
+            ]; 
+            
+            const repoName = repo.name.toLowerCase();
+            
+            // If we have specific repositories to include, only show those
+            if (includedRepos.length > 0) {
+                const isIncluded = includedRepos.some(included => repoName.includes(included));
+                console.log(`Repo ${repo.name}: checking if includes any of ${includedRepos.join(', ')} - Result: ${isIncluded}`);
+                return isIncluded;
+            }
+            
+            // Otherwise, exclude test repositories
+            if (excludedRepos.some(excluded => repoName.includes(excluded))) return false;
+            
+            return true;
+        });
         } else {
             console.error('Failed to fetch GitHub projects:', repos.message);
             return [];
@@ -486,6 +496,7 @@ async function loadGitHubProjects() {
 
     try {
         const repos = await fetchGitHubProjects();
+        console.log('All fetched repos:', repos.map(r => r.name));
         
         if (repos.length === 0) {
             projectsGrid.innerHTML = `
