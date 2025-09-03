@@ -497,6 +497,7 @@ async function loadGitHubProjects() {
     try {
         const repos = await fetchGitHubProjects();
         console.log('All fetched repos:', repos.map(r => r.name));
+        console.log('Looking for HV-System-v2 in:', repos.map(r => r.name).includes('HV-System-v2'));
         
         if (repos.length === 0) {
             projectsGrid.innerHTML = `
