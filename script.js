@@ -461,10 +461,6 @@ function createProjectCard(repo) {
                 <div class="project-tech">
                     ${languages.map(lang => `<span class="tech-tag">${lang}</span>`).join('')}
                 </div>
-                <div class="project-meta">
-                    <span class="project-date">Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
-                    ${repo.size ? `<span class="project-size">${formatRepoSize(repo.size)}</span>` : ''}
-                </div>
             </div>
         </div>
     `;
