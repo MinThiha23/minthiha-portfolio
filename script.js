@@ -319,11 +319,18 @@ const GITHUB_API_BASE = PORTFOLIO_CONFIG.github.apiBase;
 // GitHub Projects Integration
 async function fetchGitHubProjects() {
     try {
+        console.log('🔍 Starting GitHub API call...');
         const response = await fetch(`${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=${PORTFOLIO_CONFIG.github.maxRepos}`);
         const repos = await response.json();
         
+        console.log('📊 GitHub API response status:', response.status);
+        console.log('📦 Total repos received:', repos.length);
+        
         if (response.ok) {
-                    return repos.filter(repo => {
+                    console.log('🔍 Checking for HV-System-v2 in repos:', repos.map(r => r.name));
+        console.log('🎯 HV-System-v2 found:', repos.some(r => r.name === 'HV-System-v2'));
+        
+        return repos.filter(repo => {
             console.log(`Processing repo: ${repo.name} (private: ${repo.private}, fork: ${repo.fork})`);
             
             // Exclude forks and private repos
