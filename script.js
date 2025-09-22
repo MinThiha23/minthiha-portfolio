@@ -551,7 +551,7 @@ function getDemoLink(repoName) {
         'kda_campusconnect': 'https://kda-campusconnect.vercel.app/',
         'kda-campusconnect': 'https://kda-campusconnect.vercel.app/',
         'recording_system': null, // Add when you have a demo
-        'vehicle_management_system': null, // Add when you have a demo
+        'vehicle_management_system': 'https://project-quciz3szs-minthiha23s-projects.vercel.app',
         'sentiment_analysis_app': 'https://sentiment-analysis-app-vh6x.onrender.com/',
         'weather_dashboard': 'https://project-r1aadj807-minthiha23s-projects.vercel.app',
         'weather-dashboard': 'https://project-r1aadj807-minthiha23s-projects.vercel.app'
